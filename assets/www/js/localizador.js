@@ -38,6 +38,7 @@ function onDeviceReady() {
 };
 
 function savePosition(pos){
+   alert("savePosition");
 	latitude    =   pos.coords.latitude;
 	longitude   =   pos.coords.longitude;  
 	$('#save-object').removeClass("ui-disabled");
@@ -45,6 +46,7 @@ function savePosition(pos){
 };
 	
 function takeImage(){         
+   alert("takeImage");
 	var opt = {
  		quality: 50,
       destinationType: navigator.camera.DestinationType.FILE_URI,
@@ -58,6 +60,7 @@ function takeImage(){
 };
 	
 function newImage(src){
+   alert("newImage");
 	$img   =  src;
 };
 	
@@ -122,6 +125,7 @@ function validForm(){
 };
 	
 $("#photo").on('click',function() {
+	alert("photo");
 	if ( validForm() ) {
 		takeImage();
 	}
@@ -173,13 +177,14 @@ $('.refresh').on('click',function(){
 });
       
 $('#getPosition-btn').on('click',function(){
+   alert("getPosition-btn");
    $('#save-object').addClass("ui-disabled");
    $('#save-object  .ui-btn-text').text('Espere a localizaÃ§Ã£o...');
       navigator.geolocation.getCurrentPosition(savePosition, errorCB);
 }); 
   
 function checkConnection() {
-	var networkState = navigator.connection.type;
+   var networkState = navigator.connection.type;
 	var states = {};
 	states[Connection.UNKNOWN] = 'Conexão desconhecida';
 	states[Connection.ETHERNET] = 'Ethernet';
@@ -193,5 +198,6 @@ function checkConnection() {
 };
 
 $('#checkConnection').on('click',function{
-	 checkConnection();
+	alert("checkConnection");
+   checkConnection();
 });
