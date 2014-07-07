@@ -116,7 +116,7 @@ function validForm(){
 		$('#name').focus();
 		return false;
 	}
-	alert('O nome precisa ter 4 caracteres no mínimo.');
+	alert('O nome precisa ter 4 caracteres no mÃ­nimo.');
 	$('#name').focus();
 	return false;
 };
@@ -174,22 +174,22 @@ $('.refresh').on('click',function(){
       
 $('#getPosition-btn').on('click',function(){
    $('#save-object').addClass("ui-disabled");
-   $('#save-object  .ui-btn-text').text('Espere a localização...');
+   $('#save-object  .ui-btn-text').text('Espere a localizaÃ§Ã£o...');
       navigator.geolocation.getCurrentPosition(savePosition, errorCB);
 }); 
   
 function checkConnection() {
 	var networkState = navigator.connection.type;
 	var states = {};
-	states[Connection.UNKNOWN] = 'Conex�o desconhecida';
+	states[Connection.UNKNOWN] = 'Conexão desconhecida';
 	states[Connection.ETHERNET] = 'Ethernet';
 	states[Connection.WIFI] = 'WiFi';
 	states[Connection.CELL_2G] = 'Celular 2G';
 	states[Connection.CELL_3G] = 'Celular 3G';
 	states[Connection.CELL_4G] = 'Celular 4G';
-	states[Connection.CELL] = 'Conex�o celular gen�rica';
-	states[Connection.NONE] = 'Sem conex�o rede';
-	alert('Tipo de conex�o: ' + states[networkState]);
+	states[Connection.CELL] = 'Conexão celular genérica';
+	states[Connection.NONE] = 'Sem conexão rede';
+	alert('Tipo de conexão: ' + states[networkState]);
 };
 
 $('#checkConnection').on('click',function{
